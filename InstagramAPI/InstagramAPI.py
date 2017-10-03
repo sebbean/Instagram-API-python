@@ -543,10 +543,8 @@ class InstagramAPI:
         }
         if maxid:
             query_string['max_id'] = maxid
-        if system.version_info.major == 3:
-            url += urllib.parse.urlencode(query_string)
-        else:
-            url += urllib.urlencode(query_string)
+
+        url += urllib.urlencode(query_string)
         
         return self.SendRequest(url)
 
